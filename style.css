@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #30e2a7); /* Deep teal/blue gradient */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orbitron', monospace;
+}
+
+.clock-box {
+    
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 2.5rem 3.5rem;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    min-width: 420px;
+}
+
+.clock-box::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg,  #065fc5);
+    border-radius: 25px;
+    z-index: -1;
+
+}
+
+@keyframes borderRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.time-display {
+    margin-bottom: 1.2rem;
+}
+
+.hours, .minutes, .seconds {
+    font-size: 4.2rem;
+    font-weight: 700;
+    color: #17d01a; 
+    letter-spacing: 0.1rem;
+    display: inline-block;
+
+}
+
+.colon {
+    font-size: 4.2rem;
+    color: #2ac41c; 
+    font-weight: 400;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+}
+
+.ampm {
+    font-size: 2.2rem;
+    color: #19c522; 
+    font-weight: 600;
+    margin-left: 0.8rem;
+    display: inline-block;
+
+}
+
+.date-display {
+    color: #65c015;
+    font-size: 1.6rem;
+    letter-spacing: 0.08em;
+}
+
+.weekday {
+    font-weight: 600;
+    color: #65c015;
+}
+
+.day {
+    font-weight: 700;
+    color: #65c015; 
+    margin: 0 0.3em;
+}
+
+.month, .year {
+    font-weight: 500;
+    color: #65c015;
+}
